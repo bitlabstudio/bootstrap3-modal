@@ -7,6 +7,12 @@
  *
  */
 
+ body.modal-open,
+.modal-open .navbar-fixed-top,
+.modal-open .navbar-fixed-bottom {
+    margin-right: 0;
+}
+
 .modal-open {
 	overflow: hidden;
 }
@@ -38,6 +44,19 @@
 }
 
 .modal {
+	left: 50%;
+	bottom: auto;
+	right: auto;
+	padding: 0;
+	width: 500px;
+	margin-left: -250px;
+	background-color: #ffffff;
+	border: 1px solid #999999;
+	border: 1px solid rgba(0, 0, 0, 0.2);
+	border-radius: 6px;
+	-webkit-box-shadow: 0 3px 9px rgba(0, 0, 0, 0.5);
+	box-shadow: 0 3px 9px rgba(0, 0, 0, 0.5);
+	background-clip: padding-box;
 	outline: none;
 	position: absolute;
 	margin-top: 0;
@@ -47,7 +66,7 @@
 
 .modal.fade {
 	top: -100%;
-	-webkit-transition: opacity 0.3s linear, top 0.3s ease-out, bottom 0.3s ease-out, margin-top 0.3s ease-out;	
+	-webkit-transition: opacity 0.3s linear, top 0.3s ease-out, bottom 0.3s ease-out, margin-top 0.3s ease-out;
 	   -moz-transition: opacity 0.3s linear, top 0.3s ease-out, bottom 0.3s ease-out, margin-top 0.3s ease-out;
 	     -o-transition: opacity 0.3s linear, top 0.3s ease-out, bottom 0.3s ease-out, margin-top 0.3s ease-out;
 	        transition: opacity 0.3s linear, top 0.3s ease-out, bottom 0.3s ease-out, margin-top 0.3s ease-out;
@@ -82,7 +101,7 @@
 	z-index: 940;
 }
 
-.modal-backdrop, 
+.modal-backdrop,
 .modal-backdrop.fade.in{
 	opacity: 0.7;
 	filter: alpha(opacity=70);
@@ -92,6 +111,7 @@
 .modal.container {
   width: 940px;
   margin-left: -470px;
+  max-width: none;
 }
 
 /* Modal Overflow */
@@ -123,7 +143,7 @@
 }
 
 @media (max-width: 979px) {
-	.modal, 
+	.modal,
 	.modal.container,
 	.modal.modal-overflow 	{
 		top: 1%;
@@ -135,14 +155,14 @@
 		margin: 0 !important;
 		padding: 0 !important;
 	}
-	
-	.modal.fade.in, 
+
+	.modal.fade.in,
 	.modal.container.fade.in,
 	.modal.modal-overflow.fade.in {
 		top: 1%;
 		bottom: auto;
 	}
-	
+
 	.modal-body,
 	.modal-overflow .modal-body {
 		position: static;
@@ -151,7 +171,7 @@
 		max-height: none !important;
 		overflow: visible !important;
 	}
-	
+
 	.modal-footer,
 	.modal-overflow .modal-footer {
 		position: static;

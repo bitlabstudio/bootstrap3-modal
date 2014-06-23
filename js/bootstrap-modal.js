@@ -136,7 +136,7 @@
 			}
 
 			var modalOverflow = $(window).height() - 10 < this.$element.height();
-            
+
 			if (modalOverflow || this.options.modalOverflow) {
 				this.$element
 					.css('margin-top', 0)
@@ -161,7 +161,7 @@
 							elements.push(Number($(this).data('tabindex')));
 						});
 						elements.sort(function(a,b){return a-b});
-						
+
 						var arrayPos = $.inArray(tabindex, elements);
 						if (!e.shiftKey){
 						 		arrayPos < elements.length-1 ?
@@ -172,7 +172,7 @@
 									that.$element.find('[data-tabindex='+elements[elements.length-1]+']').focus() :
 									that.$element.find('[data-tabindex='+elements[arrayPos-1]+']').focus();
 							}
-						
+
 						e.preventDefault();
 					}
 				});
@@ -305,7 +305,7 @@
 				.removeData('modal')
 				.removeClass('in')
 				.attr('aria-hidden', true);
-			
+
 			if (this.$parent !== this.$element.parent()) {
 				this.$element.appendTo(this.$parent);
 			} else if (!this.$parent.length) {
@@ -349,7 +349,7 @@
 		resize: false,
 		attentionAnimation: 'shake',
 		manager: 'body',
-		spinner: '<div class="loading-spinner" style="width: 200px; margin-left: -100px;"><div class="progress progress-striped active"><div class="bar" style="width: 100%;"></div></div></div>',
+		spinner: '<div class="loading-spinner" style="width: 200px; margin-left: -100px;"><div class="progress"><div class="progress-bar" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100" style="width: 100%;"><span class="sr-only">100%</span></div></div></div>',
 		backdropTemplate: '<div class="modal-backdrop" />'
 	};
 

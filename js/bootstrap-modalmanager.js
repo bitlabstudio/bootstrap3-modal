@@ -81,12 +81,12 @@
 					that.backdrop(modal, function () {
 						modal.$element.show();
 
-						if (transition) {       
-							//modal.$element[0].style.display = 'run-in';       
+						if (transition) {
+							//modal.$element[0].style.display = 'run-in';
 							modal.$element[0].offsetWidth;
-							//modal.$element.one($.support.transition.end, function () { modal.$element[0].style.display = 'block' });  
+							//modal.$element.one($.support.transition.end, function () { modal.$element[0].style.display = 'block' });
 						}
-						
+
 						modal.layout();
 
 						modal.$element
@@ -117,7 +117,7 @@
 				} else if (modal.$backdrop){
 					var transition = $.support.transition && modal.$element.hasClass('fade');
 
-					// trigger a relayout due to firebox's buggy transition end event 
+					// trigger a relayout due to firebox's buggy transition end event
 					if (transition) { modal.$element[0].offsetWidth; }
 					$.support.transition && modal.$element.hasClass('fade') ?
 						modal.$backdrop.one($.support.transition.end, function () { modal.destroy(); }) :
@@ -408,13 +408,13 @@
 	$.fn.modalmanager.defaults = {
 		backdropLimit: 999,
 		resize: true,
-		spinner: '<div class="loading-spinner fade" style="width: 200px; margin-left: -100px;"><div class="progress progress-striped active"><div class="bar" style="width: 100%;"></div></div></div>',
+		spinner: '<div class="loading-spinner fade" style="width: 200px; margin-left: -100px;"><div class="progress"><div class="progress-bar" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100" style="width: 100%;"><span class="sr-only">100%</span></div></div></div>',
 		backdropTemplate: '<div class="modal-backdrop" />'
 	};
 
 	$.fn.modalmanager.Constructor = ModalManager
 
-	// ModalManager handles the modal-open class so we need 
+	// ModalManager handles the modal-open class so we need
 	// to remove conflicting bootstrap 3 event handlers
 	$(function () {
 		$(document).off('show.bs.modal').off('hidden.bs.modal');
